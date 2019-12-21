@@ -11,5 +11,6 @@
     "require": {
         "develhopper/qbuilder": "^0.2.0"
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
