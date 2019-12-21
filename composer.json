@@ -1,0 +1,14 @@
+{
+    "name": "develhopper/php-mvc",
+    "description": "free and opensource php-mvc framework",
+    "license": "GPL-3.0-only",
+    "authors": [
+        {
+            "name": "develhopper",
+            "email": "develhoper.0@gmail.com"
+        }
+    ],
+    "require": {
+        "develhopper/qbuilder": "^0.2.0"
+    }
+}
