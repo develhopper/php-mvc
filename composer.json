@@ -1,6 +1,7 @@
 {
     "name": "develhopper/php-mvc",
     "description": "free and opensource php-mvc framework",
+    "type": "project",
     "license": "GPL-3.0-only",
     "authors": [
         {
@@ -8,9 +9,8 @@
             "email": "develhoper.0@gmail.com"
         }
     ],
-    "require": {
-        "develhopper/qbuilder": "~1.0"
-    },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "require": {
+        "develhopper/qbuilder": "dev-master"
+    }
 }
