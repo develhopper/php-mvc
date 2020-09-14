@@ -1,5 +1,5 @@
 <?php
 $providers=[
-    App\providers\CsrfProvider::class,
-    // App\providers\RememberProvider::class
+    app\providers\CsrfProvider::class,
+    // app\providers\RememberProvider::class
 ];

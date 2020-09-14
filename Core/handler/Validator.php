@@ -1,5 +1,5 @@
 <?php
-namespace App\core\handler;
+namespace Core\handler;
 
 class Validator{
 
@@ -19,7 +19,7 @@ class Validator{
             $r=explode(":",$r);
             $arg[0]=$var;
             $arg[1]=(count($r)>1)?$r[1]:[];
-            if(!call_user_func_array(["App\core\handler\Validator",$r[0]],$arg))
+            if(!call_user_func_array(["Core\handler\Validator",$r[0]],$arg))
                 return false;
         }
         return true;

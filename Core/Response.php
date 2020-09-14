@@ -1,5 +1,5 @@
 <?php
-namespace App\core;
+namespace Core;
 
 class Response{
     private $controller;

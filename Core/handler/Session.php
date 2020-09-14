@@ -1,5 +1,5 @@
 <?php
-namespace App\core\handler;
+namespace Core\handler;
 
 class Session{
     public static function get($key){

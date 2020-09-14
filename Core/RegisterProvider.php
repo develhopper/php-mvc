@@ -1,5 +1,5 @@
 <?php
-namespace App\core;
+namespace Core;
 class RegisterProvider{
 
     public static function register(){

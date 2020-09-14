@@ -1,8 +1,8 @@
 <?php
 
-namespace App\core;
+namespace Core;
 
-use App\core\handler\Error;
+use Core\handler\Error;
 use PDO;
 
 abstract class Model

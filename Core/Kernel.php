@@ -1,9 +1,9 @@
 <?php
 
-namespace App\core;
+namespace Core;
 
-use App\core\handler\Error;
-use App\core\handler\Request;
+use Core\handler\Error;
+use Core\handler\Request;
 
 class Kernel
 {
@@ -52,7 +52,7 @@ class Kernel
 
     private function setController()
     {
-        $this->controller = "App\\controller\\" . $this->route['controller'];
+        $this->controller = "app\\controllers\\" . $this->route['controller'];
         $this->method = $this->route['function'];
         $this->setParams();
     }

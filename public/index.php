@@ -1,7 +1,7 @@
 <?php
 
-use App\core\handler\Request;
-use App\core\Kernel;
+use Core\handler\Request;
+use Core\Kernel;
 
 require_once '../bootstrap.php';
 

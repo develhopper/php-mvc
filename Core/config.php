@@ -1,7 +1,7 @@
 <?php
 
-use App\core\handler\Error;
-use App\core\handler\Session;
+use Core\handler\Error;
+use Core\handler\Session;
 
 const BASEURL="http://code4life.com";
 const DIR=__DIR__."/../../";
@@ -13,8 +13,8 @@ const Upload=BASEDIR."/public/upload/";
 const DEBUG=true;
 //register middlewares
 // $middlewares=[
-// 'admin'=>App\middleware\AdminAuth::class,
-// 'auth'=>App\middleware\Auth::class
+// 'admin'=>app\middleware\AdminAuth::class,
+// 'auth'=>app\middleware\Auth::class
 // ];
 
 if (DEBUG) {

@@ -1,8 +1,8 @@
 <?php
-namespace App\providers;
+namespace app\providers;
 
-use App\core\handler\Error;
-use App\core\handler\Session;
+use Core\handler\Error;
+use Core\handler\Session;
 
 class CsrfProvider{
     

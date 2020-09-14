@@ -1,5 +1,5 @@
 <?php
 
-use App\core\Route;
+use Core\Route;
 
 Route::get("/","IndexController@index");

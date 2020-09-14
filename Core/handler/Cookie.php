@@ -1,6 +1,6 @@
 <?php
 
-namespace App\core\handler;
+namespace Core\handler;
 
 class Cookie
 {

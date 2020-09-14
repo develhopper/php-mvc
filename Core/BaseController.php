@@ -1,7 +1,7 @@
 <?php
-namespace App\core;
+namespace Core;
 
-use App\core\handler\Error;
+use Core\handler\Error;
 
 class BaseController{
     protected $method;
