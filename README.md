@@ -13,7 +13,7 @@ foo@bar:~$ composer create-project develhopper/php-mvc
 
 ```console
 foo@bar:~$ git clone https://github.com/develhopper/php-mvc.git
-foo@bar:~$ composer install
+foo@bar:~$ cd php-mvc && composer install
 ```
 
 ## Documentaion
