@@ -9,8 +9,9 @@
             "email": "develhoper.0@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
-        "develhopper/qbuilder": "dev-master"
+        "develhopper/qbuilder": "2.0.0",
+        "develhoper/primal": "1.0.0"
     }
 }
