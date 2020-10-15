@@ -5,12 +5,18 @@ use Core\handler\Session;
 
 const BASEURL="http://code4life.com";
 const DIR=__DIR__."/../../";
-const PUBDIR=BASEURL."/public/";
-const DBUSER="root";
-const DBPASS="mysql.passwd";
-const DBNAME="codelife";
+const PUBDIR=BASEDIR."/public";
+
+const DB_DRIVER="mysql";
+const DB_HOST="localhost";
+const DB_NAME="code4life";
+const DB_USER="root";
+const DB_PASSWORD="mysql.passwd";
+
 const Upload=BASEDIR."/public/upload/";
 const DEBUG=true;
+const VIEWS_DIR=BASEDIR."/views";
+const CACHE_DIR=PUBDIR."/cache";
 //register middlewares
 // $middlewares=[
 // 'admin'=>app\middleware\AdminAuth::class,

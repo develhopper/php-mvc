@@ -2,7 +2,7 @@
 namespace Core;
 
 use Core\handler\Error;
-
+use Primal\Primal;
 class BaseController{
     protected $method;
     public function __construct()
@@ -19,15 +19,8 @@ class BaseController{
     }
 
     public function view($name,$params=[]){
-        $name=str_replace(".","/",$name);
-        $path=BASEDIR."/app/views/$name.php";
-        if(!file_exists($path)){
-            header($_SERVER['SERVER_PROTOCOL']." 404 Not Found");
-            echo "View Not Found $name";
-            exit;
-        }
-        extract($params);
-        include $path;
+        $primal=Primal::getInstance(["views_dir"=>VIEWS_DIR,"cache_dir"=>CACHE_DIR]);
+        $primal->view($name,$params);
     }
     
     public function redirect($route){
