@@ -4,6 +4,7 @@ namespace Core;
 
 use Core\handler\Error;
 use Core\handler\Request;
+use Core\exceptions\RouteException;
 
 class Kernel
 {
@@ -14,16 +15,16 @@ class Kernel
     private $response;
     public function __construct()
     {
+        include __DIR__."/kernel_configs.php";
     }
 
     public function handle(Request $request){
         session_start();
         RegisterProvider::register();
-        $this->route = Route::find($request->url);
-        if (!$this->route) {
-            Error::send(404);
-        } else if ($this->route['method'] != $_SERVER['REQUEST_METHOD']) {
-            Error::send(405);
+        try{
+            $this->route = Route::find($request->url);
+        }catch(RouteException $e){
+            Error::send($e->code);
         }
 
         $this->Routemiddleware();
@@ -34,6 +35,7 @@ class Kernel
         $response->controller=$this->controller;
         $response->method=$this->method;
         $response->params=$this->params;
+        $response->route=$this->route;
         return $response;
     }
 

@@ -2,6 +2,8 @@
 
 namespace Core;
 
+use Core\exceptions\RouteException;
+
 class Route
 {
     private static $routes = [];
@@ -41,6 +43,7 @@ class Route
             if (preg_match("/^" . $r['regex'] . "$/i", $name) && self::method_check($r))
                 return $r;
         }
+        throw new RouteException("Route no found",404);
     }
 
     public static function middleware($name=[],$index=[]){
@@ -58,5 +61,7 @@ class Route
     {
         if(strcmp($route['method'],$_SERVER['REQUEST_METHOD'])==0)
             return true;
+        else
+            throw new RouteException("Method not Allowed",405);
     }
 }
