@@ -3,6 +3,7 @@
 namespace Core;
 
 use Core\exceptions\RouteException;
+use Core\handler\Session;
 
 class Route
 {
@@ -65,8 +66,10 @@ class Route
         if (empty($name))
             $name = "/";
         foreach (self::$routes[$reqeust_method] as $r) {
-            if (preg_match("/^" . $r['regex'] . "$/i", $name) && self::method_check($r,$reqeust_method))
+            if (preg_match("/^" . $r['regex'] . "$/i", $name) && self::method_check($r,$reqeust_method)){
+                Session::set("current_route",$r);
                 return $r;
+            }
         }
         throw new RouteException("Route no found",404);
     }

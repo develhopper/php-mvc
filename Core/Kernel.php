@@ -20,9 +20,9 @@ class Kernel
 
     public function handle(Request $request){
         session_start();
-        RegisterProvider::register();
         try{
             $this->route = Route::find($request->url);
+            RegisterProvider::register();
         }catch(RouteException $e){
             Error::send($e->code);
         }
