@@ -10,10 +10,9 @@ spl_autoload_register(function ($name) {
 	if (file_exists($filename)) {
 		require_once $filename;
 	} else {
-		header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
+		if(isset($_SERVER['SERVER_PROTOCOL']))
+			header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
 		echo "Class '$filename' Not Found";
 		exit;
 	}
 });
-require_once 'routes/web.php';
-require_once 'routes/api.php';

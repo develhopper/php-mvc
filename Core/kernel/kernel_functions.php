@@ -1,23 +1,9 @@
 <?php
-
 use Core\handler\Error;
 use Core\handler\Session;
 
-//register middlewares
-// $middlewares=[
-// 'admin'=>app\middleware\AdminAuth::class,
-// 'auth'=>app\middleware\Auth::class
-// ];
-
-if (DEBUG) {
-    ini_set('display_errors', 'on');
-    ini_set('log_errors', 'on');
-    ini_set('display_startup_errors', 'on');
-    ini_set('error_reporting', E_ALL);
-}
-
 function asset($name){
-    return "/public/".$name;
+    return BASEURL."/public/".$name;
 }
 
 function _e($in){
@@ -35,6 +21,10 @@ function csrf_field(){
     echo "<input name='csrf' value='$token' type='hidden'>";
 }
 
+function csrf_token(){
+    echo bin2hex(random_bytes(10));
+}
+
 function redirect($route){
     if($route=="back"){
         header("Location:javascrtipt://history.go(-1)");
@@ -48,7 +38,7 @@ function is_route($route){
 }
 
 function slug($var){
-    return preg_replace("/\s/","_",$var);
+    return strtolower(preg_replace("/\s/","_",$var));
 }
 
 function auth(){
