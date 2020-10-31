@@ -23,7 +23,8 @@ class Route
             'function' => $controller[1],
             'regex' => $regex,
             'method' => $method,
-            'middleware'=>$middleware
+            'middleware'=>$middleware,
+            'csrf'=>$router->csrf
         ]);
     }
 

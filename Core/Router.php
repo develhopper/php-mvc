@@ -2,6 +2,7 @@
 namespace Core;
 
 use Core\handler\Session;
+use Core\exceptions\RouteException;
 
 class Router{
     private static $instance=null;
@@ -14,6 +15,7 @@ class Router{
     ];
 
     public $prefix;
+    public $csrf;
 
     private function __construct(){
 
@@ -36,7 +38,7 @@ class Router{
 
     private function applyOptions($options=[]){
         $this->prefix=(isset($options["prefix"]))?$options["prefix"]:"";
-        $this->response_type=(isset($options["response_type"]))?$options["response_type"]:"web";
+        $this->csrf=(isset($options["csrf"]))?$options["csrf"]:false;
     }
 
     public function add($method,$route){
