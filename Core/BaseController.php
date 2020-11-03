@@ -27,6 +27,7 @@ class BaseController{
         header('Content-Type: application/json');
         http_response_code($responseCode);
         echo json_encode($params,JSON_PRETTY_PRINT);
+		exit;
     }
     
     public function redirect($route){

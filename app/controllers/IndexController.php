@@ -3,6 +3,7 @@ namespace app\controllers;
 
 use Core\BaseController;
 use app\models\Post;
+
 class IndexController extends BaseController{
 
     public function index(){

@@ -4,8 +4,9 @@ namespace Core\handler;
 class Validator{
 
     public static function validate($rules){
-        foreach($rules as $key=>$rule){
-            if(!self::valid($key,$rule))
+		foreach($rules as $r)
+        foreach($r as $rule=>$var){
+            if(!self::valid($var,$rule))
                 return false;
         }
         return true;
@@ -29,7 +30,7 @@ class Validator{
         return is_int($var);
     }
 
-    private function string($var){
+    private static function string($var){
         return is_string($var);
     }
 
@@ -49,7 +50,8 @@ class Validator{
         return in_array($var,$formats);
     }
 
-    private function size($var,$s){
+	private static function email($var){
+			return preg_match("/^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}$/",$var,$match);
+	}
 
-    }
 }
