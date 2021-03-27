@@ -12,6 +12,7 @@
     "minimum-stability": "stable",
     "require": {
         "develhopper/qbuilder": "2.*",
-        "develhopper/primal": "1.*"
+        "develhopper/primal": "1.*",
+        "develhopper/denver": "^1.1"
     }
 }

@@ -4,8 +4,8 @@ namespace Core\handler;
 class Validator{
 
     public static function validate($rules){
-		foreach($rules as $r)
-        foreach($r as $rule=>$var){
+        foreach($rules as $r)
+            foreach($r as $rule=>$var){
             if(!self::valid($var,$rule))
                 return false;
         }
@@ -35,10 +35,14 @@ class Validator{
     }
 
     private static function max($var,$m){
+        if(is_string($var))
+            return strlen($var)<=$m;
         return $var<=$m;
     }
 
     private static function min($var,$m){
+        if(is_string($var))
+            return strlen($var)>=$m;
         return $var>=$m;
     }
 
@@ -50,8 +54,7 @@ class Validator{
         return in_array($var,$formats);
     }
 
-	private static function email($var){
-			return preg_match("/^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}$/",$var,$match);
-	}
-
+    public static function email($var){
+        return preg_match("/^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,4}$/",$var,$match);
+    }
 }

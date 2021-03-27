@@ -51,7 +51,6 @@ class Router{
             if(isset($_REQUEST['_method']))
                 $reqeust_method=$_REQUEST['_method'];
         }
-        $name = rtrim($name, "/");
         if (empty($name))
             $name = "/";
         foreach ($this->routes[$reqeust_method] as $r) {
@@ -69,5 +68,9 @@ class Router{
             return true;
         else
             throw new RouteException("Method not Allowed",405);
+    }
+
+    public function __get($key){
+        return $this->$key;
     }
 }
