@@ -1,7 +1,7 @@
 # PHP MVC
 Yet another php mvc micro framework
 
-## Instalation
+## Installation
 
 - composer way:
 
@@ -16,7 +16,7 @@ foo@bar:~$ git clone https://github.com/develhopper/php-mvc.git
 foo@bar:~$ cd php-mvc && composer install
 ```
 
-## Documentaion
+## Documentation
 
 coming soon ...
 
